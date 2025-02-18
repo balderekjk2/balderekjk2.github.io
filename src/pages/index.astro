@@ -1,11 +1,19 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Pop from '../components/Pop.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<div class="text-center font-semibold [&>*]:mb-2">
+		<h1 class="text-orange-400">Aloha!</h1>
+		<h2>ʻO Derek koʻu inoa</h2>
+		<h3>(My name is Derek)</h3>
+		<p>
+			<img class="mx-auto" src="https://placehold.co/250x300" />
+		</p>
+		<h4>I am a <span class="text-orange-400">Full Stack Web Developer</span></h4>
+	</div>
+	<div class="bg-white text-slate-900 text-xl py-4 px-6">
+		<p>I love to develop applications that help people feel <Pop>inspired</Pop> and <Pop>connected</Pop>. With a Bachelor of Arts in <Pop isBold>Anthropology</Pop>, I am spurred on to think of how to utilize databases in <Pop>unique</Pop> and <Pop>refreshing</Pop> ways. I am an <Pop>eager listener</Pop> and <Pop>devoted learner</Pop>, committed to making a <Pop>positive impact</Pop> through my work in the <Pop isBold>web development</Pop> industry. </p>
+	</div>
 </Layout>

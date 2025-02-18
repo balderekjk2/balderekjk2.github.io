@@ -1,0 +1,34 @@
+---
+//@ts-nocheck
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+const icons = Object.entries(import.meta.glob('../icons/skills/*.svg' , { eager: true }))
+---
+
+<Layout>
+  <div class="text-center">
+    <h2 class="text-orange-400 font-semibold mb-2">Ua lilo ʻia kēia mau mākau lolouila e aʻu</h2>
+    <h3>(These computer skills have been absorbed by me)</h3>
+    <ul>
+    {icons.map(icon => {
+      const name = icon[0].match(/\/([^/]+)\.svg/)[1];
+      return (
+        <li>
+          <Icon name={`skills/${name}`} size={84} />
+          <p>{name.replace('_', ' ')}</p>
+        </li>
+      )
+    })}
+    </ul>
+  </div>
+</Layout>
+
+<style>
+	@reference "../styles/global.css";
+  ul {
+    @apply flex flex-wrap justify-center gap-4;
+    li {
+      @apply bg-white text-slate-900 rounded-sm p-3 w-fit;
+    }
+  }
+</style>

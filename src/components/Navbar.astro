@@ -1,0 +1,18 @@
+<nav>
+  <ul>
+    <li><a href="/">Greetings</a></li>
+    <li><a href="/skills">Skills</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<style>
+  @reference "../styles/global.css";
+  ul {
+    @apply flex justify-around sm:text-xl text-white max-w-[1280px] mx-auto py-4 mb-2;
+    > li > a {
+      @apply hover:text-orange-400
+    }
+  }
+</style>

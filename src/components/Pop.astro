@@ -1,0 +1,7 @@
+---
+const { isBold = false } = Astro.props
+---
+
+<span class:list={['text-orange-500', { 'font-semibold': isBold }]}>
+  <slot />
+</span>

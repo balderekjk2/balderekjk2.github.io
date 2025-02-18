@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<Layout>
+  <div class="flex flex-wrap justify-center gap-4">
+    <ProjectCard 
+      name="Regional Movie Explorer"
+      wideUrl="/src/assets/images/rme_d.jpg"
+      mobileUrl="/src/assets/images/rme_m.jpg"
+      webLink="https://regional-movie-explorer.netlify.app/"
+      description="Users can click a region in an SVG map or drop-down to see available movies that were (mostly) produced there and find out if the movie is available to stream through service or YouTube"
+      buildTools="React, HTML, CSS, Axios, react-simple-maps, internal JSON, external API"
+      specialThanks="Travis Bell (The Movie Database + API)"
+    />
+    <ProjectCard 
+      name="Dear A.I."
+      wideUrl="/src/assets/images/dai_d.jpg"
+      mobileUrl="/src/assets/images/dai_m.jpg"
+      webLink="https://dearai.netlify.app/"
+      description="Users can view how ChatGPT responds to 31 different Dear Abby advice requests and toggle between light/dark mode for pleasant reading"
+      buildTools="React, HTML, CSS, internal JSON"
+      specialThanks="Pauline and Jeanne Phillips (Dear Abby), OpenAI Developers (ChatGPT)"
+    />
+    <ProjectCard 
+      name="Get Soapy"
+      wideUrl="/src/assets/images/gs_d.jpg"
+      mobileUrl="/src/assets/images/gs_m.jpg"
+      webLink="https://getsoapy.netlify.app/"
+      description="Users can authenticate, submit “SOAP” journal entries, view entries of others, and filter entries by tag"
+      buildTools="React, HTML, CSS, Firebase, Firestore, Axios, external API"
+      specialThanks="Tim Morgan (bible-api)"
+    />
+    <ProjectCard 
+      name="Keep It Inspirational"
+      wideUrl="/src/assets/images/kii_d.jpg"
+      mobileUrl="/src/assets/images/kii_m.jpg"
+      webLink="https://keep-it-inspirational.netlify.app/"
+      demoLink="https://vimeo.com/777125237"
+      description="Users can authenticate, commemorate affecting art stored to their profile and reflect on the art in a way that is helpful to them, complete with create/read/update/destroy functionality"
+      buildTools="React, HTML, CSS, Firebase, Axios, Express, PostgreSQL, Sequelize, Formik, Yup"
+      specialThanks="Scott Sutherland (DevMountain React.js-Specialization Instructor)"
+    />
+    <ProjectCard 
+      name="U.S. Roots Repository"
+      wideUrl="/src/assets/images/usr_d.jpg"
+      mobileUrl="/src/assets/images/usr_m.jpg"
+      webLink="https://us-roots-repository.netlify.app/"
+      demoLink="https://vimeo.com/757356941"
+      description="Users can select a U.S. state, from which they can view its listed counties, then listed towns/cities, then the history of the location with option to create/destroy a “bookmark” utilizing the browser's local storage"
+      buildTools="JavaScript, HTML, CSS, Axios, Express, external API"
+      specialThanks="Kyle Baugh (DevMountain Web Development Foundations Instructor), Wikipedia Community and API Developers"
+    />
+    <ProjectCard 
+      name="Maui Help Resources"
+      wideUrl="/src/assets/images/mhr_d.jpg"
+      mobileUrl="/src/assets/images/mhr_m.jpg"
+      webLink="https://maui-help-resources.netlify.app/"
+      description="Users can view Maui-specific low-income and crisis resources by category and quickly access the phone, email, map location, and websites under each resource"
+      buildTools="React, HTML, CSS, Axios, Express (first build), MySQL (first build), internal JSON (current)"
+      specialThanks="Maui Behavioral Health Resources Administration Team and Employees"
+    />
+    <ProjectCard 
+      name="Holy Spirit Fruits"
+      wideUrl="/src/assets/images/fhs_d.jpg"
+      mobileUrl="/src/assets/images/fhs_m.jpg"
+      webLink="https://holy-spirit-fruits.netlify.app/"
+      description="Users can interact with nice-looking fruit cards that return a random verse pertaining to the related fruit of the Holy Spirit"
+      buildTools="React, HTML, CSS, Axios, external API"
+      specialThanks="API.Bible Developers "
+    />
+  </div>
+</Layout>

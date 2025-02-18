@@ -1,0 +1,20 @@
+---
+const { name, wideUrl, mobileUrl, webLink, demoLink, description, buildTools, specialThanks } = Astro.props;
+---
+
+<div class="flex flex-col max-w-[592px] min-h-[400px] [&>*]:mb-3 text-justify bg-white text-slate-900 p-2 rounded-md">
+  <h2 class="text-center">{name}</h2>
+  <div class="flex">
+    <img class="border-1 border-slate-900 h-fit" src={wideUrl} alt=`Desktop View of ${name} Project`>
+    <img class="relative right-36 bottom-2 border-1 border-slate-900 shadow-lg shadow-slate-500 max-w-[140px] h-fit" src={mobileUrl} alt=`Mobile View of ${name} Project`>
+  </div>
+  <div class="flex justify-center gap-8">
+    <a class="a" href={webLink} target="_blank">Visit Website</a>
+    {demoLink && <a class="a" href={demoLink} target="_blank">Visit Demo</a>}
+  </div>
+  <div class="[&>p]:mb-3">
+    <p><strong>Description:</strong> {description}</p>
+    <p><strong>Build Tools:</strong> {buildTools}</p>
+    <p><strong>Special Thanks:</strong> {specialThanks}</p>
+  </p>
+</div>
