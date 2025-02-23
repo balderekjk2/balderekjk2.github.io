@@ -2,8 +2,76 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-  <p class="text-center">
-    Coming Soon...
-  </p>
+<Layout title="Contact Derek">
+  <div class="text-center font-semibold">
+    <h2 class="text-orange-400 mb-2">E kama&#699;ilio</h2>
+		<h3>(Let's talk)</h3>
+  </div>
+  <div class="w-full bg-white py-4">
+    <form id="emailer" method="post">
+      <label>
+        Your Name:
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Your Email:
+        <input type="email" name="sender" required>
+      </label>
+      <label>
+        Message:
+        <textarea name="message" required></textarea>
+      </label>
+      <div id="emailer_status" class="hidden"></div>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <script>
+    //@ts-nocheck
+    document.getElementById("emailer").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const formRes = Object.fromEntries(formData);
+      let statusUI = document.getElementById("emailer_status");
+      try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbxmdfnJPiIO_Vjdvw8d051gHtBYzzt8BDmqZ4JVuDs1dckHaDVxXjNeY0o51WDkPGmHrQ/exec", {
+          redirect: "follow",
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+          body: JSON.stringify(formRes),
+        });
+        const status = await response.text();
+        const outData = status == 'Success' ? {textContent: 'Success!', className: 'success'} : {textContent: 'Something went wrong.', className: 'error'}
+        statusUI.textContent = outData.textContent;
+        statusUI.className = outData.className;
+      } catch (error) {
+        console.error("Error:", error);
+        statusUI.textContent = 'Server error.';
+        statusUI.className = 'error';
+      }
+    });
+  </script>
 </Layout>
+
+<style>
+  @reference "../styles/global.css";
+  form {
+    @apply bg-slate-50 flex flex-col gap-4 py-4 px-6 max-w-96 mx-auto text-slate-950 rounded shadow-lg shadow-slate-400 border-1 text-lg;
+  }
+  label {
+    @apply flex flex-col;
+  }
+  input, textarea {
+    @apply border-black border-1 px-1 rounded-md mt-1;
+  }
+  button {
+    @apply bg-linear-to-b from-blue-200 to-blue-400 cursor-pointer hover:from-blue-100 hover:to-blue-300 rounded w-20 ml-auto;
+  }
+  .success {
+    @apply bg-green-400 p-2 rounded-sm text-base;
+  }
+  .error {
+    @apply bg-red-600 p-2 rounded-sm text-slate-50 text-base;
+  }
+</style>

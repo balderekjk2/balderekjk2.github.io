@@ -5,10 +5,10 @@ import { Icon } from "astro-icon/components";
 const icons = Object.entries(import.meta.glob('../icons/skills/*.svg' , { eager: true }))
 ---
 
-<Layout>
+<Layout title="Skills of Derek">
   <div class="text-center">
-    <h2 class="text-orange-400 font-semibold mb-2">Ua lilo ʻia kēia mau mākau lolouila e aʻu</h2>
-    <h3>(These computer skills have been absorbed by me)</h3>
+    <h2 class="text-orange-400 mb-2 font-semibold">Ua lilo &#699;ia kēia mau mākau lolouila e a&#699;u</h2>
+    <h3 class="font-semibold">(These computer skills have been absorbed by me)</h3>
     <ul>
     {icons.map(icon => {
       const name = icon[0].match(/\/([^/]+)\.svg/)[1];
@@ -24,7 +24,7 @@ const icons = Object.entries(import.meta.glob('../icons/skills/*.svg' , { eager:
 </Layout>
 
 <style>
-	@reference "../styles/global.css";
+  @reference "../styles/global.css";
   ul {
     @apply flex flex-wrap justify-center gap-4;
     li {
